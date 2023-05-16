@@ -1,0 +1,40 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <div class='_user-info-block'>
+        <h2>User info</h2>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">name</th>
+              <td>Mark</td>
+            </tr>
+            <tr>
+              <th scope="row">introduction</th>
+              <td>It's me!</td>
+            </tr>
+          </tbody>
+        </table>
+        <%= link_to books_path, class: 'btn btn-outline-secondary btn-block my-3' do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>
+      </div>
+
+      <div class='_new-book-block'>
+        <h2>New book</h2>
+        <%= form_with model: @book do |f| %>
+          <div class='form-group'>
+            <label class='form-label' for='titleForm'>Title</label>
+            <%= f.text_field :title, class: 'form-control', id: 'titleForm' %>
+          </div>
+          <div class='form-group'>
+            <label class='form-label' for='bodyForm'>Opinion</label>
+            <%= f.text_area :body, class: 'form-control', id: 'bodyForm'  %>
+          </div>
+          <%= f.submit 'Create Book', class: 'btn btn-success' %>
+        <% end %>
+      </div>
+    </div>
+    <div class='col-md-8 offset-md-1'></div>
+  </div>
+</div>
